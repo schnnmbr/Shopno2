@@ -69,12 +69,12 @@ if (basename($_SERVER['PHP_SELF']) == basename (__FILE__)) {
 
 
 // Obscure login screen error messages
-function eSGy_login_obscure(){ return 'Wrong Username/Password Combination';}
+function shopno2_login_obscure(){ return 'Wrong Username/Password Combination';}
 add_filter( 'login_errors', 'eSGy_login_obscure' );
 
 
 
-function eSGy_custom_admin_bar_setting() {
+function shopno2_custom_admin_bar_setting() {
 	if (is_admin())
 		return TRUE;
 	else
@@ -88,7 +88,7 @@ function eSGy_custom_admin_bar_setting() {
 //add_filter ('show_admin_bar', 'eSGy_custom_admin_bar_setting');
 
  // remove wp version param from any enqueued scripts
-function eSGy_remove_wp_ver_css_js( $src ) {
+function shopno2_remove_wp_ver_css_js( $src ) {
     if ( strpos( $src, 'ver=' ) )
         $src = remove_query_arg( 'ver', $src );
     return $src;
@@ -108,7 +108,7 @@ remove_action('wp_head', 'start_post_rel_link', 10, 0);
 remove_action('wp_head', 'parent_post_rel_link', 10, 0);
 remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 
-function eSGy_remove_extra_meta_boxes() {
+function shopno2_remove_extra_meta_boxes() {
 //remove_meta_box( 'postcustom' , 'post' , 'normal' ); // custom fields for posts
 //remove_meta_box( 'postcustom' , 'page' , 'normal' ); // custom fields for pages
 //remove_meta_box( 'postexcerpt' , 'post' , 'normal' ); // post excerpts
@@ -128,7 +128,7 @@ remove_meta_box('pageparentdiv','page','side'); // Page Parent
 add_action( 'admin_menu' , 'eSGy_remove_extra_meta_boxes' );
 
 // Remove Dashboard Widgets
-function eSGy_remove_dashboard_widgets() {
+function shopno2_remove_dashboard_widgets() {
 	remove_meta_box( 'dashboard_browser_nag', 'dashboard', 'side' );
 	remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
 	remove_meta_box( 'dashboard_primary', 'dashboard', 'side');
@@ -142,8 +142,8 @@ function eSGy_remove_dashboard_widgets() {
 } 
 
 // Hook into the 'wp_dashboard_setup' action to register function
-//add_action('wp_dashboard_setup', 'eSGy_remove_dashboard_widgets' );
-add_action('admin_init', 'eSGy_remove_dashboard_widgets' );
+//add_action('wp_dashboard_setup', 'shopno2_remove_dashboard_widgets' );
+add_action('admin_init', 'shopno2_remove_dashboard_widgets' );
 
 //Replace Howdy with a more corporate sounding "Hello"
 function eSGy_replace_howdy( $wp_admin_bar ) {
@@ -154,47 +154,47 @@ function eSGy_replace_howdy( $wp_admin_bar ) {
         'title' => $newtitle,
     ) );
 }
-add_filter( 'admin_bar_menu', 'eSGy_replace_howdy',25 );
+add_filter( 'admin_bar_menu', 'shopno2_replace_howdy',25 );
 
 //Remove the theme editor menu which is anyway never allowed to use.
-function remove_editor_menu() {
+function shopno2_remove_editor_menu() {
   remove_action('admin_menu', '_add_themes_utility_last', 101);
 }
 
-add_action('_admin_menu', 'remove_editor_menu', 1);
+add_action('_admin_menu', 'shopno2_remove_editor_menu', 1);
 
 //Change Wordpress Verison in footer to fool hackers.
-function change_footer_version() {
+function shopno2_change_footer_version() {
   return '<a href="mailto:support@es.gy">email support</a>';
 }
-add_filter( 'update_footer', 'change_footer_version', 9999 );
+add_filter( 'update_footer', 'shopno2_change_footer_version', 9999 );
 
 //Custom Footer Text
-function eSGy_remove_footer_admin () {
+function shopno2_remove_footer_admin () {
   echo '<i>Thank you for being our Customer! :) </i>';
 }
-add_filter('admin_footer_text', 'eSGy_remove_footer_admin');
+add_filter('admin_footer_text', 'shopno2_remove_footer_admin');
 
 
 
 
 /*eSGy Login Screen*/
-function eSGy_custom_login_logo() {
+function shopno2_custom_login_logo() {
     echo '<style type="text/css">
         h1 a { background-image:url('.content_url('').'/mu-plugins/eSGyAdminTheme/esgylogo-72.png) !important; }
     </style>';
 }
 
-add_action('login_head', 'eSGy_custom_login_logo');
+add_action('login_head', 'shopno2_custom_login_logo');
 
 //eSGy Admin Screen Branding
-function custom_logo() {
+function shopno2_custom_logo() {
   echo '<style type="text/css">
     #header-logo { background-image: url('.content_url('').'/mu-plugins/eSGyAdminTheme/esgylogo-72.png) !important; }
     </style>';
 }
 
-add_action('admin_head', 'custom_logo');
+add_action('admin_head', 'shopno2_custom_logo');
 
 
 //Shopno2 Admin Theme
