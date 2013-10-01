@@ -70,7 +70,7 @@ if (basename($_SERVER['PHP_SELF']) == basename (__FILE__)) {
 
 // Obscure login screen error messages
 function shopno2_login_obscure(){ return 'Wrong Username/Password Combination';}
-add_filter( 'login_errors', 'eSGy_login_obscure' );
+add_filter( 'login_errors', 'shopno2_login_obscure' );
 
 
 
@@ -85,7 +85,7 @@ function shopno2_custom_admin_bar_setting() {
 
 
  //Uncomment Below Line To Hide Admin Bar For Logged In Users
-//add_filter ('show_admin_bar', 'eSGy_custom_admin_bar_setting');
+//add_filter ('show_admin_bar', 'shopno2_custom_admin_bar_setting');
 
  // remove wp version param from any enqueued scripts
 function shopno2_remove_wp_ver_css_js( $src ) {
@@ -94,8 +94,8 @@ function shopno2_remove_wp_ver_css_js( $src ) {
     return $src;
 }
 //remove css jss from head
-add_filter( 'style_loader_src', 'eSGy_remove_wp_ver_css_js', 9999 );
-add_filter( 'script_loader_src', 'eSGy_remove_wp_ver_css_js', 9999 );
+add_filter( 'style_loader_src', 'shopno2_remove_wp_ver_css_js', 9999 );
+add_filter( 'script_loader_src', 'shopno2_remove_wp_ver_css_js', 9999 );
 
 // remove junk from head
 remove_action('wp_head', 'rsd_link');
@@ -125,7 +125,7 @@ remove_meta_box('slugdiv','post','normal'); // post slug
 remove_meta_box('slugdiv','page','normal'); // page slug
 remove_meta_box('pageparentdiv','page','side'); // Page Parent
 }
-add_action( 'admin_menu' , 'eSGy_remove_extra_meta_boxes' );
+add_action( 'admin_menu' , 'shopno2_remove_extra_meta_boxes' );
 
 // Remove Dashboard Widgets
 function shopno2_remove_dashboard_widgets() {
@@ -178,7 +178,7 @@ add_filter('admin_footer_text', 'shopno2_remove_footer_admin');
 
 
 
-/*eSGy Login Screen*/
+/*shopno2 Login Screen*/
 function shopno2_custom_login_logo() {
     echo '<style type="text/css">
         h1 a { background-image:url('.content_url('').'/mu-plugins/shopno2/s2logo-72.png) !important; }
@@ -187,7 +187,7 @@ function shopno2_custom_login_logo() {
 
 add_action('login_head', 'shopno2_custom_login_logo');
 
-//eSGy Admin Screen Branding
+//shopno2 Admin Screen Branding
 function shopno2_custom_logo() {
   echo '<style type="text/css">
     #header-logo { background-image: url('.content_url('').'/mu-plugins/shopno2/s2logo-72.png) !important; }
@@ -205,13 +205,13 @@ add_action('admin_head', 'shopno2_custom_logo');
 //add_action('admin_head', 'shopno2_admin_head');
 
 //Comment "IN" if CUSTOM WELCOME PANEL is WANTED
-/*function eSGy_welcome_panel() {
+/*function shopno2_welcome_panel() {
 
 	?>
 
 
 	<div class="custom-welcome-panel-content">
-	<h1><?php _e( 'Welcome to eSGy Content Management System!' ); ?></h1>
+	<h1><?php _e( 'Welcome to shopno2 Content Management System!' ); ?></h1>
 	<p class="about-description"><?php _e( 'You can create your own content right from this Dashboard!' ); ?></p>
 	<div class="welcome-panel-column-container">
 	<div class="welcome-panel-column">
@@ -247,7 +247,7 @@ add_action('admin_head', 'shopno2_custom_logo');
 	</div>
 	</div>
 	<div class="">
-	<h3><?php _e( 'eSGy Support Options' ); ?></h3>
+	<h3><?php _e( 'shopno2 Support Options' ); ?></h3>
 	<p class="about-description">Create a new paragraph!</p>
 	<ol><li> <a href="http://es.gy/priority">Priority Support</a> </li>
 		<li> <a href="http://es.gy/help">Forums</a>
@@ -258,7 +258,7 @@ add_action('admin_head', 'shopno2_custom_logo');
 <?php
 }
 
-add_action( 'welcome_panel', 'eSGy_welcome_panel' );
+add_action( 'welcome_panel', 'shopno2_welcome_panel' );
 /** STOP ADDING CODE NOW**/
  
 /* That's all folks! */
