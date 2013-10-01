@@ -146,7 +146,7 @@ function shopno2_remove_dashboard_widgets() {
 add_action('admin_init', 'shopno2_remove_dashboard_widgets' );
 
 //Replace Howdy with a more corporate sounding "Hello"
-function eSGy_replace_howdy( $wp_admin_bar ) {
+function shopno2_replace_howdy( $wp_admin_bar ) {
     $my_account=$wp_admin_bar->get_node('my-account');
     $newtitle = str_replace( 'Howdy,', 'Hello', $my_account->title );            
     $wp_admin_bar->add_node( array(
