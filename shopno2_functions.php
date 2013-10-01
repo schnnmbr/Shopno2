@@ -181,7 +181,7 @@ add_filter('admin_footer_text', 'shopno2_remove_footer_admin');
 /*eSGy Login Screen*/
 function shopno2_custom_login_logo() {
     echo '<style type="text/css">
-        h1 a { background-image:url('.content_url('').'/mu-plugins/eSGyAdminTheme/esgylogo-72.png) !important; }
+        h1 a { background-image:url('.content_url('').'/mu-plugins/shopno2/s2logo-72.png) !important; }
     </style>';
 }
 
@@ -190,7 +190,7 @@ add_action('login_head', 'shopno2_custom_login_logo');
 //eSGy Admin Screen Branding
 function shopno2_custom_logo() {
   echo '<style type="text/css">
-    #header-logo { background-image: url('.content_url('').'/mu-plugins/eSGyAdminTheme/esgylogo-72.png) !important; }
+    #header-logo { background-image: url('.content_url('').'/mu-plugins/shopno2/s2logo-72.png) !important; }
     </style>';
 }
 
