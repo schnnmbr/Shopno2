@@ -123,7 +123,7 @@ remove_meta_box( 'commentstatusdiv' , 'post' , 'normal' ); // allow comments for
 remove_meta_box( 'commentstatusdiv' , 'page' , 'normal' ); // allow comments for pages
 remove_meta_box('slugdiv','post','normal'); // post slug
 remove_meta_box('slugdiv','page','normal'); // page slug
-//remove_meta_box('pageparentdiv','page','side'); // Page Parent
+//remove_meta_box('pageparentdiv','page','side'); // Page Parent Attributes. Necessary to use page attributes.
 }
 add_action( 'admin_menu' , 'shopno2_remove_extra_meta_boxes' );
 
