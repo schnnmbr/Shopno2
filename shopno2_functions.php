@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: Shopno2 Functions.php
-Plugin URI: http://es.gy
+Plugin URI: http://shopno2.com
 Description: A simple plugin that contains all Custom Functions
 Author: sachin nambiar
-Author URI: sachinnambiar.com
+Author URI: shopno2.com
 Version: 0.3
 */
  
