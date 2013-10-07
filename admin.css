@@ -247,14 +247,14 @@ background-color: #F9F9F9;
 
 div.postbox[id^="headway-admin-meta-box-"] div.handlediv, 
 div.postbox[id^="headway-admin-meta-box-"]:hover div.handlediv {
-	background: url(../eSGyAdminTheme/esgylogo-16.png);
+	background: url(../mu-plugins/s2logo-16.png);
 	background-repeat: no-repeat;
 	background-position: center;
 	opacity: 1;
 }
 
 	#icon-headway {
-		background: url(../eSGyAdminTheme/esgylogo-32.png) no-repeat;
+		background: url(../mu-plugins/s2logo-32.png) no-repeat;
 		width: 32px;
 		height: 32px;
 		margin-right: 12px;
