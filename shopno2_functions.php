@@ -164,11 +164,11 @@ function shopno2_remove_editor_menu() {
 add_action('_admin_menu', 'shopno2_remove_editor_menu', 1);
 
 //Change Wordpress Verison in footer to fool hackers.
-function shopno2_change_footer_version() {
+/*function shopno2_change_footer_version() {
   return '<a href="mailto:support@es.gy">email support</a>';
 }
 add_filter( 'update_footer', 'shopno2_change_footer_version', 9999 );
-
+*/
 //Custom Footer Text
 function shopno2_remove_footer_admin () {
   echo '<i>Thank you for being our Customer! :) </i>';
